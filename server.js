@@ -7,7 +7,7 @@ app.use(morgan('combined'));
 
 var articles =
 {
-    var article1 :
+    'article1':
     {
         title :'Article 1',
         heading :'ARTICLE 1',
@@ -17,7 +17,7 @@ var articles =
             <p>hi there!article 1 hi there!article 1hi there!article 1hi there!article 1</p>
             <p>hi there!article 1 hi there!article 1hi there!article 1hi there!article 1</p>`
     },
-    var article2 :
+    'article2' :
     {
         title :'Article 2',
         heading :'ARTICLE 2',
@@ -26,7 +26,7 @@ var articles =
         `<p>hi there!article 1 hi there!article 1hi there!article 1hi there!article 1</p>
          <p>hi there!article 1 hi there!article 1hi there!article 1hi there!article 1</p>`
     },
-    var article3 :
+    'article3' :
     {
         title :'Article 3',
         heading :'ARTICLE 3',
@@ -70,7 +70,8 @@ app.get('/', function (req, res) {
 });
 
 app.get('/:article',function(req,res){
-    res.send(createtemplate(articleS[article]));
+    var article=artcles.params.article;
+    res.send(createtemplate(articles[article]));
 });
 
 app.get('/article2',function(req,res){
