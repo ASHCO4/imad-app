@@ -26,18 +26,18 @@ function createtemplate(data) {
          `<html>
             <head>
                 <title>
-                    $(title)
+                    ${title}
                 </title>
                 <link href="/ui/style.css" ref="stylesheet" />
             </head>
             <body>
                 <a href="\">HOME</a>
                 <hr>
-                <h1>$(heading)</h1>
+                <h1>${heading}</h1>
                 <div>
-                    $(date)
+                    ${date}
                 </div>
-                $(content)
+                ${content}
                 
             </body>
         </html>
