@@ -19,4 +19,11 @@ body {
 .img-medium {
     height: 200px;
 }
-
+.container{
+        
+            color: #3c3232;
+            font-family: sans-serif;
+            align-content: center;
+            padding: 60px;
+           
+        }
