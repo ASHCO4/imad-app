@@ -70,7 +70,7 @@ app.get('/', function (req, res) {
 });
 
 app.get('/:article',function(req,res){
-    var article=artcles.params.article;
+    var article=articles.params.article;
     res.send(createtemplate(articles[article]));
 });
 
