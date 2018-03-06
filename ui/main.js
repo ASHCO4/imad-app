@@ -1,7 +1,7 @@
 console.log('Loaded!');
 //TO CHANGE THE TEXT
-var element=document.getElementById("maintxt");
-element.innerHTML='new value';
+//var element=document.getElementById("maintxt");
+//element.innerHTML='new value';
 
 //T MOVE ELEMENT
 
