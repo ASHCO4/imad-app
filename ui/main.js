@@ -5,7 +5,7 @@ element.innerHTML='new value';
 
 //T MOVE ELEMENT
 
-var marginleft;
+var marginLeft;
 var img=document.getElementById("madi");
 function moveRight()
 {
