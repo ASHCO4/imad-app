@@ -6,9 +6,10 @@ element.innerHTML='new value';
 //T MOVE ELEMENT
 
 var img=document.getElementById("madi");
+var marginLeft=0;
 function moveRight()
 {
-    marginLeft=marginLeft+10;
+    marginLeft=marginLeft + 10;
     img.style.marginLeft=marginLeft+ 'px';
 }
 img.onclick= function()
