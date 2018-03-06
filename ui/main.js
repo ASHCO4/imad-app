@@ -5,8 +5,14 @@ element.innerHTML='new value';
 
 //T MOVE ELEMENT
 
+var marginleft;
 var img=document.getElementById("madi")
+function moveRight()
+{
+    marginLeft=marginLeft+10;
+    img.style.marginLeft=marginLeft+ 'px';
+}
 img.onclick= function()
 {
-    img.style.marginLeft='100px';
+    var interval=setInterval(moveRight,100);
 };
