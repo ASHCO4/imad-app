@@ -18,8 +18,8 @@ img.onclick= function()
 };
 
 //counter code
-var button=document.getElementById("button");
-button.onclick()=function()
+var button=document.getElementById("buttn");
+button.onclick() =function()
 {
     //create request variable
     var request=new XMLHttpRequest();
