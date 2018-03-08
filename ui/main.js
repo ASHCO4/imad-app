@@ -37,13 +37,12 @@ button.onclick()=function()
                 span.innerHTML= counter.toString();
             }
         }
-    }
+    };
     //not yet done
-};
 
 
 //make a request
-request.open('GET','http://ashcopoci.imad.hasura-app.io/count1',true)
+request.open('GET','http://ashcopoci.imad.hasura-app.io/count1',true);
 request.send(null);
     
 }
