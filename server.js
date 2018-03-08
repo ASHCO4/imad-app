@@ -75,7 +75,7 @@ app.get('/:articleName',function(req,res){
 });
 
 
-app.get('/counter1',function(req,res){
+app.get('/count',function(req,res){
     counter=counter + 1;
     res.send(counter);
 });
