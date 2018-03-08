@@ -19,7 +19,7 @@ img.onclick= function()
 
 //counter code
 var button=document.getElementById("button");
-button.onclick()=function()
+button.onClick()=function()
 {
     //create request variable
     var request=new XMLHttpRequest();
