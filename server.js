@@ -64,7 +64,10 @@ function createtemplate(data) {
 return htmltemplate;
 }
 
-
+app.get('/count1',function(req,res){
+    counter=counter + 1;
+    res.send(counter);
+});
 app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'index.html'));
 });
@@ -77,7 +80,7 @@ app.get('/:articleName',function(req,res){
 
 app.get('/count',function(req,res){
     counter=counter + 1;
-    req.send(counter);
+    res.send(counter);
 });
 
 app.get('/ui/main.js',function(req,res) {
