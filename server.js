@@ -77,7 +77,7 @@ app.get('/:articleName',function(req,res){
 
 app.get('/count',function(req,res){
     counter=counter + 1;
-    res.send(counter);
+    req.send(counter);
 });
 
 app.get('/ui/main.js',function(req,res) {
