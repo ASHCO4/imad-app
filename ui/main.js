@@ -18,16 +18,16 @@ img.onclick= function()
 };
 
 //counter code
-var button=document.getElementById("buttn");
-button.onClick() =function()
-{
+var button=document.getElementById('buttn');
+button.onclick() =function(){
+    
     //create request variable
     var request=new XMLHttpRequest();
     
     //capture the response and store it in a variable
-    request.onreadyStateChange=function()
+    request.onreadstatechange=function()
     {
-        if(request.raedystate===XMLRequest.DONE)
+        if(request.readystate===XMLHttpRequest.DONE)
         {
             //take some action
             if(request.status==200)
