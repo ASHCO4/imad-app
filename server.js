@@ -64,7 +64,7 @@ function createtemplate(data) {
 return htmltemplate;
 }
 var names = [];
-app.get('/submit-name', function (req, res) {//url =submit-name?query
+app.get('/submit-name?name=', function (req, res) {//url =submit-name?query
     var name = req.query.name;
 
     names.push(name);
