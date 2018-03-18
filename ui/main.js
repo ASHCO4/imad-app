@@ -31,7 +31,7 @@ request.send(null);
 };
 
 var nameInput = document.getElementById('name');
-var name1 = nameInput.value;
+var name = nameInput.value;
 var submit = document.getElementById('submitbtn');
 submit.onclick = function () {
     //make request to server and send the name
