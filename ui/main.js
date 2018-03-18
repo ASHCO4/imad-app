@@ -47,7 +47,7 @@ submit.onclick = function () {
             if(request.status==200)
             {
                 //capture a list of names and render it as a list
-                var names = resquest.responseText;
+                var names = request.responseText;
                 names = JSON.parse(names);
                 var list = '';
                 for (var i = 0; i < names.length; i++) {
