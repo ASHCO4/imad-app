@@ -2,7 +2,7 @@
 
 //counter code
 var button=document.getElementById('buttn');
-button.onclick() =function(){
+button.onclick =function(){
     
     //create request variable
     var request=new XMLHttpRequest();
