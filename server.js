@@ -63,6 +63,14 @@ function createtemplate(data) {
         `;
 return htmltemplate;
 }
+var names = [];
+app.get('/submit-name/:name', function (req, res) {
+    var name = req.params.name;
+
+    names.push(name);
+
+    res.send(JSON.stringify(names));
+});
 
 app.get('/count1',function(req,res){
     counter=counter + 1;
