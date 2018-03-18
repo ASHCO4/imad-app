@@ -30,8 +30,7 @@ request.send(null);
     
 };
 
-var nameInput = document.getElementById('name');
-var name = nameInput.value;
+
 var submit = document.getElementById('submitbtn');
 submit.onclick = function () {
     //make request to server and send the name
@@ -60,7 +59,8 @@ submit.onclick = function () {
     };
     //not yet done
 
-
+var nameInput = document.getElementById('name');
+var name = nameInput.value;
 //make a request
 request.open('GET','http://ashcopoci.imad.hasura-app.io/submit-name?name=' + name,true);
 request.send(null);
