@@ -123,7 +123,7 @@ app.get('/article/:articleName',function(req,res){
             else
             {
                 var articleData=result.rows[0];
-                res.send(createTemplate(articleData));
+                res.send(createtemplate(articleData));
             }
         }
     });
