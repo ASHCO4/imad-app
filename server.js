@@ -4,6 +4,7 @@ var path = require('path');
 var counter=0;
 var app = express();
 var Pool=require('pg').Pool;
+var crypto=require('crypto');
 app.use(morgan('combined'));
 
 var config={
@@ -13,36 +14,19 @@ var config={
     port:'5432',
     password: process.env.DB_PASSWORD,
 };
-var articles =
+var pool=new Pool(config);
+
+function hash(input,salt)
 {
-    'article1':
-    {
-        title :'Article 1',
-        heading :'ARTICLE 1',
-        date :'march 3,2018',
-        content:
-        `<p>hi there!article 1 hi there!article 1hi there!article 1hi there!article 1</p>
-            <p>hi there!article 1 hi there!article 1hi there!article 1hi there!article 1</p>
-            <p>hi there!article 1 hi there!article 1hi there!article 1hi there!article 1</p>`
-    },
-    'article2' :
-    {
-        title :'Article 2',
-        heading :'ARTICLE 2',
-        date :'march 3,2018',
-        content:
-        `<p>hi there!article 1 hi there!article 1hi there!article 1hi there!article 1</p>
-         <p>hi there!article 1 hi there!article 1hi there!article 1hi there!article 1</p>`
-    },
-    'article3' :
-    {
-        title :'Article 3',
-        heading :'ARTICLE 3',
-        date :'march 3,2018',
-        content:
-        `<p>hi there!article 1 hi there!article 1hi there!article 1hi there!article 1</p>`
-    }
-};
+    var hashed=cryptopbkdf25ync(input,salt,10000,512,'sha512');
+    return("pbkdf25","10000",salt,hashed.toString('hex'));
+}
+
+app.get('/hash/:input',function(req,res)
+{
+    var hashedString=hash(req.params.input,'this-is-some-random-string');
+    res.sent(hashedString);
+});
 
 function createtemplate(data) {
     var title =data.title;
@@ -71,7 +55,7 @@ function createtemplate(data) {
         `;
 return htmltemplate;
 }
-var pool=new Pool(config);
+
 app.get('/test-db',function(req,res){
     //make select req and response with results
     pool.query('SELECT * FROM TEST',
