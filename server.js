@@ -11,7 +11,7 @@ var config={
     database:'ashcopoci',
     host:'db.imad.hasura-app.io',
     port:'5432',
-    password: process.env.DS_PASSWORD,
+    password: process.env.DB_PASSWORD,
 };
 var articles =
 {
