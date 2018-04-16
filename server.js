@@ -4,7 +4,7 @@ var path = require('path');
 var counter=0;
 var app = express();
 var Pool=require('pg').Pool;
-var crypto=require('crypto');
+var crypto1=require('crypto');
 app.use(morgan('combined'));
 
 var config={
@@ -18,7 +18,7 @@ var pool=new Pool(config);
 
 function hash(input,salt)
 {
-    var hashed=crypto.pbkdf25ync(input,salt,10000,512,'sha512');
+    var hashed=crypto1.pbkdf25ync(input,salt,10000,512,'sha512');
     return["pbkdf25","10000",salt,hashed.toString('hex')];
 }
 
