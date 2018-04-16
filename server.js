@@ -18,7 +18,7 @@ var pool=new Pool(config);
 
 function hash(input,salt)
 {
-    var hashed=cryptopbkdf25ync(input,salt,10000,512,'sha512');
+    var hashed=crypto.pbkdf25ync(input,salt,10000,512,'sha512');
     return("pbkdf25","10000",salt,hashed.toString('hex'));
 }
 
