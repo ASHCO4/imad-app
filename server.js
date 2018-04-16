@@ -3,8 +3,16 @@ var morgan = require('morgan');
 var path = require('path');
 var counter=0;
 var app = express();
+var Pool=require('pg').Pool;
 app.use(morgan('combined'));
 
+var config={
+    user:'ashcopoci',
+    database:'ashcopoci',
+    host:'db.imad.hasura-app.io',
+    port:'5432',
+    password: process.env.DS_PASSWORD,
+};
 var articles =
 {
     'article1':
@@ -63,6 +71,22 @@ function createtemplate(data) {
         `;
 return htmltemplate;
 }
+var pool=new Pool(config);
+app.get('/test-db',function(req,res){
+    //make select req and response with results
+    pool.query('SELECT * FROM TEST',
+    function(err,result)
+    {
+        if(err)
+        {
+            res.status(500).send(err.toString());
+        }
+        else
+        {
+            res.send(JSON.stringify(result));
+        }
+    });
+});
 var names = [];
 app.get('/submit-name', function (req, res) {//url =submit-name?query
     var name = req.query.name;
